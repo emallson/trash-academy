@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+
+{% block title %}Mob: {{name}}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <header class="card-header">
+        <p class="card-header-title">{{name}}</p>
+        <p class="card-header-icon">
+            <span class="tags has-addons">
+                <span class="tag is-dark">{{percent}}%</span>
+                <span class="tag is-light">{{teeming_percent}}%</span>
+            </span>
+        </p>
+    </header>
+    <div class="card-content">
+        <div class="content">
+            {% for ability in abilities %}
+                {% include "ability.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

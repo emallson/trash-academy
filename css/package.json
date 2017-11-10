@@ -1,0 +1,14 @@
+{
+  "name": "trash-academy-css",
+  "version": "0.1.0",
+  "description": "",
+  "main": "custom.sass",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "./node_modules/.bin/node-sass --output-style compressed --source-map true custom.sass > public/bulma_custom.css"
+  },
+  "devDependencies": {
+    "node-sass": "^4.6.0"
+  }
+}

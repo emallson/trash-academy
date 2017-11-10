@@ -1,0 +1,24 @@
+[package]
+authors = ["J David Smith <emallson@atlanis.net>"]
+build = "build.rs"
+name = "trash-academy"
+version = "0.1.0"
+
+[[bin]]
+name = "trash_academy"
+path = "src/bin.rs"
+
+[build-dependencies]
+askama = "0.5.0"
+
+[dependencies]
+askama = {version = "0.5.0", features=["with-iron"]}
+askama_derive = "0.5.0"
+env_logger = "0.4.3"
+hyper = "0.11.6"
+iron = "0.5"
+log = "0.3.8"
+logger = "0.3.0"
+mount = "0.3.0"
+router = "0.5.0"
+staticfile = "0.4.0"
