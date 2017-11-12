@@ -8,10 +8,18 @@ extern crate logger;
 extern crate log;
 extern crate env_logger;
 extern crate separator;
+#[macro_use]
+extern crate diesel;
+#[macro_use]
+extern crate diesel_codegen;
+extern crate dotenv;
 
 extern crate askama;
 #[macro_use]
 extern crate askama_derive;
+
+pub mod db;
+pub mod schema;
 
 use iron::prelude::*;
 use staticfile::Static;
@@ -141,5 +149,5 @@ pub fn start() {
     let mut chain = Chain::new(root());
     chain.link_before(log_before);
     chain.link_after(log_after);
-    Iron::new(chain).http("localhost:9001").unwrap();
+    Iron::new(chain).http("10.227.162.167:9001").unwrap();
 }
