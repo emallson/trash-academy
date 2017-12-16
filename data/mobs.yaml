@@ -3,7 +3,7 @@
   name: Cursed Falke
   contribution: 4 
   type: beast
-  hp: 1,688,809
+  hp: 1688809
   abilities:
     - id: 199185
       name: Ravenous Bite
@@ -14,7 +14,7 @@
   name: Enslaved Shieldmaiden
   contribution: 4
   type: humanoid
-  hp: 10,977,258
+  hp: 10977258
   abilities:
     - id: 198944
       name: Breach Armor
@@ -27,21 +27,21 @@
       amounts: [621268, 959268, 118750, 131250]
       tags: [magic, frontal]
 - id: 97097
-  name: Hejarjar Champion
+  name: Helarjar Champion
   contribution: 4
   type: humanoid
-  hp: 14,762,782
+  hp: 14762782
   abilities:
     - id: 198405
       name: Bone Chilling Scream
       base_description: Lets out a bone chilling scream, fearing and reducing movement speed of enemies by 30% within 12 yards for 3 sec.
-      amounts: [],
+      amounts: []
       tags: [interrupt, wipe]
 - id: 99033
   name: Helarjar Mistcaller
   contribution: 4
   type: humanoid
-  hp: 12,491,585
+  hp: 12491585
   abilities:
     - id: 194610
       name: Shroud Bolt
@@ -68,7 +68,7 @@
   name: Night Watch Mariner
   contribution: 6
   type: humanoid
-  hp: 17,033,980
+  hp: 17033980
   abilities:
     - id: 195279
       name: Bind
@@ -84,7 +84,7 @@
   name: Runecarver Slave
   contribution: 3
   type: humanoid
-  hp: 7,025,448
+  hp: 7025448
   abilities:
     - id: 202365
       name: Fire Blast
@@ -100,7 +100,7 @@
   name: Seacursed Mistmender
   contribution: 4
   type: humanoid
-  hp: 8,342,741
+  hp: 8342741
   abilities:
     - id: 194610
       name: Shroud Bolt
@@ -116,7 +116,7 @@
   name: Seacursed Slaver
   contribution: 4
   type: humanoid
-  hp: 11,306,576
+  hp: 11306576
   abilities:
     - id: 194674
       name: Barbed Spear
@@ -137,7 +137,7 @@
   name: Seacursed Soulkeeper
   contribution: 4
   type: humanoid
-  hp: 14,762,782
+  hp: 14762782
   abilities:
     - id: 195036
       name: Defiant Strike
@@ -153,6 +153,7 @@
   name: Seacursed Swiftblade
   contribution: 4
   type: humanoid
+  hp: 9330669
   abilities:
     - id: 194615
       name: Sea Legs
@@ -168,6 +169,7 @@
   name: Skjal
   contribution: 12
   type: humanoid
+  hp: 33194424
   abilities:
     - id: 195279
       name: Bind
@@ -188,6 +190,7 @@
   name: The Grimewalker
   contribution: 10
   type: unknown
+  hp: 34067960
   abilities:
     - id: 194099
       name: Bile Breath
@@ -201,6 +204,7 @@
   name: Waterlogged Soul Guard
   contribution: 4
   type: humanoid
+  hp: 11923786
   abilities:
     - id: 194640
       name: Curse of Hope

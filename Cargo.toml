@@ -3,7 +3,6 @@ authors = ["J David Smith <emallson@atlanis.net>"]
 build = "build.rs"
 name = "trash-academy"
 version = "0.1.0"
-
 [[bin]]
 name = "trash_academy"
 path = "src/bin.rs"
@@ -16,6 +15,7 @@ askama_derive = "0.5.0"
 env_logger = "0.4.3"
 hyper = "0.11.6"
 iron = "0.5"
+lazy_static = "*"
 log = "0.3.8"
 logger = "0.3.0"
 mount = "0.3.0"
@@ -24,6 +24,7 @@ separator = "0.3.1"
 serde = "1.0.20"
 serde_derive = "1.0.20"
 serde_yaml = "0.7.1"
+slug = "*"
 staticfile = "0.4.0"
 
 [dependencies.askama]

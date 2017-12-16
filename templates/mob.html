@@ -1,10 +1,10 @@
 <div class="card">
     <header class="card-header">
-        <p class="card-header-title">{{mob.name}}</p>
+        <p class="card-header-title"><a >{{mob.name}}</a>&nbsp;&nbsp;HP: {{mob.hp_template|safe}}</p>
         <p class="card-header-icon">
             <span class="tags has-addons">
-                <span class="tag is-dark">{{mob.contribution/forces}}%</span>
-                <span class="tag is-light">{{mob.contribution/teeming_forces}}%</span>
+                <span class="tag is-dark">{{mob.pct_contribution}}%</span>
+                <span class="tag is-light">{{mob.pct_teeming_contribution}}%</span>
             </span>
         </p>
     </header>
