@@ -1,0 +1,9 @@
+{% extends "main.html" %}
+
+{% block title %}{{name}}{% endblock %}
+
+{% block content %}
+{% for mob in mobs %}
+    {% include "mob.html" %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,218 @@
+---
+- id: 97163
+  name: Cursed Falke
+  contribution: 4 
+  type: beast
+  hp: 1,688,809
+  abilities:
+    - id: 199185
+      name: Ravenous Bite
+      base_description: "Bites a target with a diseased beak, inflicting %d to %d Nature damage, snaring targets by 30%, and inflicting %d Nature damage every second for 6 sec."
+      amounts: [257983, 272983, 38259]
+      tags: [magic, dot]
+- id: 102104
+  name: Enslaved Shieldmaiden
+  contribution: 4
+  type: humanoid
+  hp: 10,977,258
+  abilities:
+    - id: 198944
+      name: Breach Armor
+      base_description: "Strikes the target's armor, inflicting %d to %d Physical damage and reducing armor by 10%. This effect stacks."
+      amounts: [454543, 482543]
+      tags: [physical, tank]
+    - id: 199061
+      name: Hew Soul
+      base_description: "The caster sweeps their blade at frontal targets, inflicting %d to %d Shadow damage and afflicting them with Hew Soul, absorbing %d to %d healing for 15 sec."
+      amounts: [621268, 959268, 118750, 131250]
+      tags: [magic, frontal]
+- id: 97097
+  name: Hejarjar Champion
+  contribution: 4
+  type: humanoid
+  hp: 14,762,782
+  abilities:
+    - id: 198405
+      name: Bone Chilling Scream
+      base_description: Lets out a bone chilling scream, fearing and reducing movement speed of enemies by 30% within 12 yards for 3 sec.
+      amounts: [],
+      tags: [interrupt, wipe]
+- id: 99033
+  name: Helarjar Mistcaller
+  contribution: 4
+  type: humanoid
+  hp: 12,491,585
+  abilities:
+    - id: 194610
+      name: Shroud Bolt
+      base_description: Fires a bolt of shadow energy at a target, inflicting %d to %d Shadow damage, chaining to additional nearby targets.
+      amounts: [301858, 321858]
+      tags: [magic, bounce]
+    - id: 216197
+      name: Surging Waters
+      base_description: Conjures water from the sea of souls, healing a friendly target for %d to %d.
+      amounts: [6650000, 7350000]
+      tags: [heal]
+    - id: 199589
+      name: Whirlpool of Souls
+      base_description: Fires a flurry of missiles towards any nearby friends over 12 sec. Each impact heals friendly units for %d to %d and damages enemies for %d to %d Frost damage.
+      amounts: [95000, 105000, 408913, 432913]
+      tags: [heal, aoe, magic]
+    - id: 192016
+      name: Shroud of Concentration
+      base_description: Shrouds the target with a thick mist, providing immunity to silences and interrupts.
+      confirmed: false
+      amounts: []
+      tags: [interrupt-immunity, buff]
+- id: 97182
+  name: Night Watch Mariner
+  contribution: 6
+  type: humanoid
+  hp: 17,033,980
+  abilities:
+    - id: 195279
+      name: Bind
+      base_description: A fierce slash, forcing the opponent off balance, inflicting %d to %d Physical damage and Bleeding the target for an additional %d Physical damage every second for 12 sec.
+      amounts: [984553, 1045553, 111793]
+      tags: [dot]
+    - id: 192019
+      name: Lantern of Darkness
+      base_description: Exposes shadowy enregy within his lantern, inflicting %d to %d Shadow damage every half-second to all enemies for 6 sec.
+      amounts: [138600, 142650]
+      tags: [wipe, uninterruptable]
+- id: 102375
+  name: Runecarver Slave
+  contribution: 3
+  type: humanoid
+  hp: 7,025,448
+  abilities:
+    - id: 202365
+      name: Fire Blast
+      base_description: Blasts the target for %d to %d Fire damage.
+      amounts: [472093, 501093]
+      tags: [magic]
+    - id: 202408
+      name: Flare
+      base_description: Conjures a flare, inflicting %d to %d Fire damage to targets within 2 yards of targeted location.
+      amounts: [66025, 72975]
+      tags: [magic, aoe]
+- id: 97365
+  name: Seacursed Mistmender
+  contribution: 4
+  type: humanoid
+  hp: 8,342,741
+  abilities:
+    - id: 194610
+      name: Shroud Bolt
+      base_description: Fires a bolt of shadow energy at a target, inflicting %d to %d Shadow damage, chaining to additional nearby targets.
+      amounts: [301858, 321858]
+      tags: [magic, bounce]
+    - id: 199514
+      name: Torrent of Souls
+      base_description: Fires a flurry of missiles towards any nearby friends over 12 sec. Each impact heals friendly units for %d to %d and damages enemies for %d to %d Frost damage.
+      amounts: [95000, 105000, 408913, 432913]
+      tags: [heal, aoe, magic]
+- id: 97043
+  name: Seacursed Slaver
+  contribution: 4
+  type: humanoid
+  hp: 11,306,576
+  abilities:
+    - id: 194674
+      name: Barbed Spear
+      base_description: Throws a spear at target player. After 3 seconds, all players within 3 yards of the target are pulled to the caster. Then, after 4 seconds, strikes enemies within 8 yards for %d to %d Physical damage, bleeding them for %d Physical damage every half-second over 4 sec.
+      amounts: [379078, 402078, 31941]
+      tags: [pull, aoe]
+    - id: 198752
+      name: Fracture
+      base_description: Smashes his spear into the ground, creating a fracture, inflicting %d to %d Physical damage to enemies within 1.5 yards.
+      amounts: [301858, 321858]
+      tags: [dont-stand-on-the-tank]
+    - id: 201567
+      name: Swirling Muck
+      base_description: Hurls a pool of swirling murk in a targeted direction, inflicting %d Nature damage every second.
+      amounts: [207090]
+      tags: [aoe]
+- id: 97200
+  name: Seacursed Soulkeeper
+  contribution: 4
+  type: humanoid
+  hp: 14,762,782
+  abilities:
+    - id: 195036
+      name: Defiant Strike
+      base_description: Begins a dark march in a forward direction, swinging wildly. Each swing inflicts %d to %d Physical damage to frontal enemies. After 3 swings, a final slam inflicts %d to %d Physical damage to enemies within 7 yards of the impact location.
+      amounts: [350998, 371998, 802748, 854748]
+      tags: [aoe, uninterruptable]
+    - id: 200208
+      name: Brackwater Blast
+      base_description: Corrupts a target, causing them to explode for %d to %d Frost damage after 4 sec.
+      amounts: [476000, 525000]
+      tags: [aoe]
+- id: 98919
+  name: Seacursed Swiftblade
+  contribution: 4
+  type: humanoid
+  abilities:
+    - id: 194615
+      name: Sea Legs
+      base_description: Showcases excellent competency with evading in the rough open seas, gaining 47 to 53% Ranged and Spell Deflection and 47 to 53% Dodge for 3 sec.
+      amounts: []
+      tags: [buff]
+    - id: 185325
+      name: Deceptive Strike
+      base_description: Dashes into the shadows, creating several ghostly images. The true version then strikes enemies in a 5 yard hemisphere, inflicting %d to %d Shadow damage.
+      amounts: [1114247, 1179347]
+      tags: [teleport, aoe, one-shot]
+- id: 99307
+  name: Skjal
+  contribution: 12
+  type: humanoid
+  abilities:
+    - id: 195279
+      name: Bind
+      base_description: A fierce slash, forcing the opponent off balance, inflicting %d to %d Physical damage and Bleeding the target for an additional %d Physical damage every second for 12 sec.
+      amounts: [984553, 1045553, 111793]
+      tags: [dot]
+    - id: 195293
+      name: Debilitating Shout
+      base_description: Belittles enemies, inflicting %d to %d Nature damage and increasing damage taken by 10% for 18 sec. This effect stacks.
+      amounts: [379078, 402078]
+      tags: [debuff, interrupt]
+    - id: 196885
+      name: Give No Quarter
+      base_description: Pierces the veil, moving seamlessly through the world. Upon reaching the destination, inflicts %d to %d Arcane damage to any targets within 8 yards.
+      amounts: [1920000, 2130000]
+      tags: [teleport, one-shot]
+- id: 97185
+  name: The Grimewalker
+  contribution: 10
+  type: unknown
+  abilities:
+    - id: 194099
+      name: Bile Breath
+      base_description: Breathes out putrid sludge, inflicting %d to %d Nature damage and decreases maximum health by 5%. This effect stacks.
+      amounts: [1365388, 1447388]
+    - id: 194106
+      name: Poisonous Slam
+      base_description: Crushes the ground with a grotesque slam, inflicting %d to %d Nature damage to all enemies within 8 yards and knocking them all back. Creates a pool of sludge on the ground that grows over time, inflicting %d Nature damage every second to those inside.
+      amounts: [302000, 335000, 221130]
+- id: 99188
+  name: Waterlogged Soul Guard
+  contribution: 4
+  type: humanoid
+  abilities:
+    - id: 194640
+      name: Curse of Hope
+      base_description: "Curses the target's Hope, decreasing their damage done based on current health (up to 50%)."
+      amounts: []
+    - id: 194442
+      name: Six Pound Barrel
+      base_description: Kicks a barrel of seawater, inflicting %d to %d Frost damage to enemies within 5 yards upon contact with the barrel or after it reaches the end of its path.
+      amounts: [539999, 580999]
+      tags: [aoe]
+    - id: 194657
+      name: Soul Siphon
+      base_description: "Siphons the target's soul, inflicting %d Shadow damage every half-second for 4 sec, healing the caster for the damage inflicted."
+      amounts: [31687]
+      tags: [dot]

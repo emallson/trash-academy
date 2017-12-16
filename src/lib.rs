@@ -1,3 +1,4 @@
+//TODO: loading data
 extern crate iron;
 #[macro_use]
 extern crate router;
@@ -8,10 +9,13 @@ extern crate logger;
 extern crate log;
 extern crate env_logger;
 extern crate separator;
-
 extern crate askama;
 #[macro_use]
 extern crate askama_derive;
+extern crate serde;
+#[macro_use]
+extern crate serde_derive;
+extern crate serde_yaml;
 
 use iron::prelude::*;
 use staticfile::Static;
@@ -24,34 +28,51 @@ use iron::headers::ContentType;
 use iron::modifiers::Header;
 use separator::Separatable;
 
-#[derive(Template)]
+#[derive(Template, Default)]
 #[template(path = "main.html")]
 struct MainTemplate {
 }
 
-#[derive(Template)]
-#[template(path = "mob.html")]
-struct MobTemplate<'a, 'b> {
+#[derive(Template, Default)]
+#[template(path = "instance.html")]
+struct InstanceTemplate<'a, 'b> {
     name: &'a str,
-    percent: f64,
-    teeming_percent: f64,
-    abilities: &'b [Ability<'b>],
     _parent: MainTemplate,
+    forces: usize,
+    teeming_forces: usize,
+    mobs: Vec<MobTemplate<'a, 'b>>,
 }
 
+#[derive(Deserialize)]
+struct MobTemplate<'a, 'b> {
+    name: &'a str,
+    contribution: usize,
+    #[serde(borrow)]
+    abilities: Vec<Ability<'b>>,
+}
+
+#[derive(Deserialize)]
+struct Instance<'a> {
+    name: &'a str,
+    forces: usize,
+    teeming_forces: usize,
+    mobs: Vec<usize>,
+}
+
+#[derive(Deserialize)]
 struct Ability<'a> {
     id: usize,
     name: &'a str,
     base_description: &'a str,
     /// Contains the mythic +0 amounts of damage/healing/whatever done by the ability
-    amounts: &'a [usize],
+    amounts: Vec<usize>,
     description: String,
 }
 
 impl<'a> Ability<'a> {
     fn new(id: usize, name: &'a str, base_description: &'a str, amounts: &'a [usize]) -> Self {
         let mut ab = Ability {
-            id, name, base_description, amounts, description: "".to_owned()
+            id, name, base_description, amounts: Vec::from(amounts), description: "".to_owned()
         };
         ab.description = ab.describe();
         ab
@@ -60,7 +81,7 @@ impl<'a> Ability<'a> {
     fn describe(&self) -> String {
         const LEVELS: &[usize] = &[1, 10, 20];
         let mut owned = self.base_description.to_owned();
-        for &amount in self.amounts {
+        for &amount in &self.amounts {
             let (low, mid, high) = scale(amount, LEVELS);
             let tpl = AmountTemplate {
                     amount_base: low,
@@ -91,30 +112,34 @@ fn scale(amount: usize, levels: &[usize]) -> (usize, usize, usize) {
     (s(levels[0]), s(levels[1]), s(levels[2]))
 }
 
-fn mob(_: &mut Request) -> IronResult<Response> {
+fn instance(_: &mut Request) -> IronResult<Response> {
     Ok(Response::with((iron::status::Ok,
                        Header(ContentType::html()),
-                       MobTemplate {
-                           name: "Tank Butcherer",
-                           percent: 2.0,
-                           abilities: &[Ability::new(0,
-                                                  "Shadow Slash",
-                                                  "Deals YUUUGE Shadow damage to all \
-                                                  players in a frontal cone. Will not \
-                                                          turn while casting.",
-                                                          &[],
-                                                          ),
-                                                          Ability::new(0,
-                                                                    "Penetrating Shot",
-                                                                    "Deals %d physical damage in a line 45 \
-                                                                    yards in front of the caster. Ignores \
-                                                          armor.",
-                                                          &[1_600_000],
-                                                          )],
-                           teeming_percent: 1.2,
-                           _parent: MainTemplate {},
-                       })))
+                       )))
 }
+
+// fn mob(_: &mut Request) -> IronResult<Response> {
+    // Ok(Response::with((iron::status::Ok,
+                       // Header(ContentType::html()),
+                       // MobTemplate {
+                           // name: "Tank Butcherer",
+                           // contribution: 2,
+                           // abilities: vec![Ability::new(0,
+                                                  // "Shadow Slash",
+                                                  // "Deals YUUUGE Shadow damage to all \
+                                                  // players in a frontal cone. Will not \
+                                                          // turn while casting.",
+                                                          // &[],
+                                                          // ),
+                                                          // Ability::new(0,
+                                                                    // "Penetrating Shot",
+                                                                    // "Deals %d physical damage in a line 45 \
+                                                                    // yards in front of the caster. Ignores \
+                                                          // armor.",
+                                                          // &[1_600_000],
+                                                          // )],
+                       // })))
+// }
 
 fn resources() -> Mount {
     let mut mount = Mount::new();
